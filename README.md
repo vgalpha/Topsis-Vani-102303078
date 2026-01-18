@@ -13,6 +13,7 @@
 ## 🔗 Quick Links
 
 - **🌐 Web App:** [https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/](https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/)
+- **📓 Google Colab:** [https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing](https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing)
 - **📦 PyPI Package:** [https://pypi.org/project/Topsis-Vani-102303078/](https://pypi.org/project/Topsis-Vani-102303078/)
 - **💻 GitHub Repository:** [https://github.com/vgalpha/Topsis-Vani-102303078](https://github.com/vgalpha/Topsis-Vani-102303078)
 
@@ -84,7 +85,7 @@ topsis('test_data/data.csv', '1,1,1,1,1', '+,+,-,+,+', 'test_data/result.csv')
 
 ### Option 4: Jupyter Notebook
 
-Open `topsis.ipynb` in Jupyter or Google Colab for step-by-step analysis with visualizations.
+Open `topsis.ipynb` in Jupyter or use our **[Google Colab version](https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing)** for step-by-step analysis with visualizations.
 
 ---
 
@@ -126,6 +127,7 @@ Sample data with 8 mutual funds (M1-M8) evaluated on 5 criteria:
 ## 🔗 Links
 
 - **Web App:** [https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/](https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/)
+- **Google Colab:** [https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing](https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing)
 - **PyPI Package:** [https://pypi.org/project/Topsis-Vani-102303078/](https://pypi.org/project/Topsis-Vani-102303078/)
 - **GitHub:** [https://github.com/vgalpha/Topsis-Vani-102303078](https://github.com/vgalpha/Topsis-Vani-102303078)
 
