@@ -10,6 +10,12 @@
 **Roll Number:** 102303078  
 **Email:** vgoyal_be23@thapar.edu  
 
+## 🔗 Quick Links
+
+- **🌐 Web App:** [https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/](https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/)
+- **📦 PyPI Package:** [https://pypi.org/project/Topsis-Vani-102303078/](https://pypi.org/project/Topsis-Vani-102303078/)
+- **💻 GitHub Repository:** [https://github.com/vgalpha/Topsis-Vani-102303078](https://github.com/vgalpha/Topsis-Vani-102303078)
+
 ---
 
 ## 🎯 What is TOPSIS?
