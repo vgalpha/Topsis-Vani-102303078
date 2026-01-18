@@ -241,9 +241,9 @@ tmp/
 # *.csv
 
 # Keep example data
-!data.xlsx
-!data.csv
-!result.csv
+!test_data/data.xlsx
+!test_data/data.csv
+!test_data/result.csv
 
 # Logs
 *.log

@@ -31,7 +31,7 @@ topsis <InputDataFile> <Weights> <Impacts> <OutputFileName>
 ### Example
 
 ```bash
-topsis data.csv "1,1,1,2" "+,+,-,+" result.csv
+topsis test_data/data.csv "1,1,1,2" "+,+,-,+" test_data/result.csv
 ```
 
 ### Python Module
