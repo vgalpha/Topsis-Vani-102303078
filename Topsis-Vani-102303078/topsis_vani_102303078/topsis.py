@@ -116,10 +116,10 @@ def topsis(input_file, weights_str, impacts_str, output_file):
     print(f"Success: TOPSIS result saved to '{output_file}'")
 
 
-if __name__ == "__main__":
+def main():
     # Argument check
     if len(sys.argv) != 5:
-        error_exit("Incorrect number of parameters.\nUsage: python topsis.py <InputDataFile> <Weights> <Impacts> <OutputFileName>")
+        error_exit("Incorrect number of parameters.\nUsage: topsis <InputDataFile> <Weights> <Impacts> <OutputFileName>")
 
     input_file = sys.argv[1]
     weights_str = sys.argv[2]
@@ -127,3 +127,7 @@ if __name__ == "__main__":
     output_file = sys.argv[4]
 
     topsis(input_file, weights_str, impacts_str, output_file)
+
+
+if __name__ == "__main__":
+    main()

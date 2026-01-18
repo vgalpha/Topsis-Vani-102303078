@@ -6,8 +6,8 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text(encoding='utf-8')
 
 setup(
-    name='Topsis-Vani-102303078',
-    version='1.0.0',
+    name='topsis-vani-102303078',
+    version='1.0.1',
     author='Vani Goyal',
     author_email='vgoyal_be23@thapar.edu',
     description='A Python package for TOPSIS (Technique for Order Preference by Similarity to Ideal Solution)',
