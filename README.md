@@ -13,6 +13,14 @@
 ## 🔗 Quick Links
 
 - **🌐 Web App:** [https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/](https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/)
+<br>
+
+> ⚠️ **<font color="red">Warning: App Inactivity</font>**
+>
+> Since this app is hosted on a free tier, it may become inactive if not used for a while. If you see a message asking to "get this app back up," please click the affirmative button to reactivate it.
+>
+> ![App Inactive](static/app-state.png)
+
 - **📓 Google Colab:** [https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing](https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing)
 - **📦 PyPI Package:** [https://pypi.org/project/Topsis-Vani-102303078/](https://pypi.org/project/Topsis-Vani-102303078/)
 - **💻 GitHub Repository:** [https://github.com/vgalpha/Topsis-Vani-102303078](https://github.com/vgalpha/Topsis-Vani-102303078)
@@ -30,6 +38,15 @@ The algorithm finds the alternative closest to the ideal solution and farthest f
 ## 🚀 Try it Online
 
 **🌐 Web App:** [https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/](https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/)
+<br>
+
+> ⚠️ **<font color="red">Warning: App Inactivity</font>**
+>
+> Since this app is hosted on a free tier, it may become inactive if not used for a while. If you see a message asking to "get this app back up," please click the affirmative button to reactivate it.
+>
+> ![App Inactive](static/app-state.png)
+
+<br>
 
 Upload your data and get TOPSIS results instantly with visualizations!
 
@@ -56,6 +73,15 @@ Topsis-Vani-102303078/
 
 ### Option 1: Web Application
 Visit: [https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/](https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/)
+<br>
+
+> ⚠️ **<font color="red">Warning: App Inactivity</font>**
+>
+> Since this app is hosted on a free tier, it may become inactive if not used for a while. If you see a message asking to "get this app back up," please click the affirmative button to reactivate it.
+>
+> ![App Inactive](static/app-state.png)
+
+<br>
 
 ### Option 2: Command Line Interface
 
@@ -127,6 +153,15 @@ Sample data with 8 mutual funds (M1-M8) evaluated on 5 criteria:
 ## 🔗 Links
 
 - **Web App:** [https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/](https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/)
+<br>
+
+> ⚠️ **<font color="red">Warning: App Inactivity</font>**
+>
+> Since this app is hosted on a free tier, it may become inactive if not used for a while. If you see a message asking to "get this app back up," please click the affirmative button to reactivate it.
+>
+> ![App Inactive](static/app-state.png)
+
+<br>
 - **Google Colab:** [https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing](https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing)
 - **PyPI Package:** [https://pypi.org/project/Topsis-Vani-102303078/](https://pypi.org/project/Topsis-Vani-102303078/)
 - **GitHub:** [https://github.com/vgalpha/Topsis-Vani-102303078](https://github.com/vgalpha/Topsis-Vani-102303078)
