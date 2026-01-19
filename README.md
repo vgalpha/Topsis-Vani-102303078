@@ -17,10 +17,14 @@
 - **🌐 Web App:** [https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/](https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/)
 <br>
 
-> ⚠️ **<font color="red">Warning: App Inactivity</font>**
->
-> Since this app is hosted on a free tier, it may become inactive if not used for a while. If you see a message asking to "get this app back up," please click the affirmative button to reactivate it.
->
+## 🚨 **IMPORTANT WARNING** 🚨
+
+> ### ⚠️ **<span style="color: red; font-weight: bold; font-size: 1.2em;">APP MAY BE INACTIVE - CLICK TO REACTIVATE</span>** ⚠️
+> 
+> **🔴 This app is hosted on a free tier and goes inactive after periods of no use.**
+> 
+> **If you see "get this app back up" message, CLICK THE BUTTON to reactivate it.**
+> 
 > ![App Inactive](static/app-state.png)
 
 - **📓 Google Colab:** [https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing](https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing)
@@ -79,10 +83,14 @@ TOPSIS is used in many fields to make better decisions. Here are a few examples:
 Visit: [https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/](https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/)
 <br>
 
-> ⚠️ **<font color="red">Warning: App Inactivity</font>**
->
-> Since this app is hosted on a free tier, it may become inactive if not used for a while. If you see a message asking to "get this app back up," please click the affirmative button to reactivate it.
->
+## 🚨 **IMPORTANT WARNING** 🚨
+
+> ### ⚠️ **<span style="color: red; font-weight: bold; font-size: 1.2em;">APP MAY BE INACTIVE - CLICK TO REACTIVATE</span>** ⚠️
+> 
+> **🔴 This app is hosted on a free tier and goes inactive after periods of no use.**
+> 
+> **If you see "get this app back up" message, CLICK THE BUTTON to reactivate it.**
+> 
 > ![App Inactive](static/app-state.png)
 
 <br>
@@ -159,10 +167,14 @@ Sample data with 8 mutual funds (M1-M8) evaluated on 5 criteria:
 - **Web App:** [https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/](https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/)
 <br>
 
-> ⚠️ **<font color="red">Warning: App Inactivity</font>**
->
-> Since this app is hosted on a free tier, it may become inactive if not used for a while. If you see a message asking to "get this app back up," please click the affirmative button to reactivate it.
->
+## 🚨 **IMPORTANT WARNING** 🚨
+
+> ### ⚠️ **<span style="color: red; font-weight: bold; font-size: 1.2em;">APP MAY BE INACTIVE - CLICK TO REACTIVATE</span>** ⚠️
+> 
+> **🔴 This app is hosted on a free tier and goes inactive after periods of no use.**
+> 
+> **If you see "get this app back up" message, CLICK THE BUTTON to reactivate it.**
+> 
 > ![App Inactive](static/app-state.png)
 
 - **Google Colab:** [https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing](https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing)
