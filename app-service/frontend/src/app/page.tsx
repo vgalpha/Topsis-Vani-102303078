@@ -13,67 +13,82 @@ interface TopsisResult {
 const styles = {
   container: {
     minHeight: '100vh',
-    backgroundColor: '#111827',
-    color: '#f9fafb',
-    padding: '2rem',
+    backgroundColor: '#f8fafc',
+    color: '#1f2937',
+    padding: '2rem 1rem',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
   },
   maxWidth: {
-    maxWidth: '64rem',
+    maxWidth: '1200px',
     margin: '0 auto',
-    paddingLeft: '1rem',
-    paddingRight: '1rem',
   },
   title: {
     textAlign: 'center' as const,
-    marginBottom: '2rem',
+    marginBottom: '3rem',
   },
   titleText: {
-    fontSize: '2.5rem',
-    fontWeight: 'bold',
-    color: 'white',
-    marginBottom: '0.5rem',
+    fontSize: '2.25rem',
+    fontWeight: '700',
+    color: '#1f2937',
+    marginBottom: '0.75rem',
+    letterSpacing: '-0.025em',
   },
   subtitle: {
-    color: '#9ca3af',
+    fontSize: '1.125rem',
+    color: '#6b7280',
+    fontWeight: '400',
   },
   formContainer: {
-    backgroundColor: '#1f2937',
-    border: '1px solid #4b5563',
-    borderRadius: '0.5rem',
-    padding: '1.5rem',
-    maxWidth: '32rem',
+    backgroundColor: 'white',
+    border: '1px solid #e5e7eb',
+    borderRadius: '12px',
+    padding: '2rem',
+    maxWidth: '600px',
     margin: '0 auto',
+    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
   },
   inputGroup: {
     marginBottom: '1.5rem',
   },
   label: {
     display: 'block',
-    fontSize: '0.875rem',
-    fontWeight: '500',
-    marginBottom: '0.5rem',
+    fontSize: '14px',
+    fontWeight: '600',
+    marginBottom: '8px',
+    color: '#374151',
   },
   input: {
     width: '100%',
-    padding: '0.5rem',
-    backgroundColor: '#374151',
-    border: '1px solid #4b5563',
-    borderRadius: '0.25rem',
-    color: 'white',
+    padding: '12px 16px',
+    backgroundColor: 'white',
+    border: '2px solid #d1d5db',
+    borderRadius: '8px',
+    color: '#1f2937',
+    fontSize: '16px',
+    lineHeight: '1.5',
+    transition: 'border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out',
+    outline: 'none',
+  },
+  inputFocus: {
+    borderColor: '#3b82f6',
+    boxShadow: '0 0 0 3px rgba(59, 130, 246, 0.1)',
   },
   fileInput: {
     width: '100%',
-    fontSize: '0.875rem',
-    color: '#9ca3af',
-    backgroundColor: '#374151',
-    border: '1px solid #4b5563',
-    borderRadius: '0.25rem',
-    padding: '0.5rem',
+    padding: '12px 16px',
+    backgroundColor: 'white',
+    border: '2px solid #d1d5db',
+    borderRadius: '8px',
+    color: '#1f2937',
+    fontSize: '16px',
+    cursor: 'pointer',
+    transition: 'border-color 0.15s ease-in-out',
   },
   helpText: {
-    fontSize: '0.75rem',
-    color: '#9ca3af',
-    marginTop: '0.25rem',
+    fontSize: '14px',
+    color: '#6b7280',
+    marginTop: '6px',
+    lineHeight: '1.4',
   },
   checkbox: {
     display: 'flex',
@@ -81,101 +96,148 @@ const styles = {
     marginBottom: '1.5rem',
   },
   checkboxInput: {
-    width: '1rem',
-    height: '1rem',
-    marginRight: '0.75rem',
+    width: '18px',
+    height: '18px',
+    marginRight: '12px',
     accentColor: '#3b82f6',
+    cursor: 'pointer',
+  },
+  checkboxLabel: {
+    fontSize: '16px',
+    fontWeight: '500',
+    color: '#374151',
+    cursor: 'pointer',
   },
   button: {
     width: '100%',
-    backgroundColor: '#000000',
+    backgroundColor: '#3b82f6',
     color: 'white',
-    fontWeight: '500',
-    padding: '0.75rem 1rem',
-    borderRadius: '0.25rem',
+    fontWeight: '600',
+    fontSize: '16px',
+    padding: '14px 24px',
+    borderRadius: '8px',
     border: 'none',
     cursor: 'pointer',
-    transition: 'background-color 0.2s',
+    transition: 'all 0.2s ease-in-out',
+    lineHeight: '1.5',
   },
   buttonHover: {
-    backgroundColor: '#1f2937',
+    backgroundColor: '#2563eb',
+    transform: 'translateY(-1px)',
+    boxShadow: '0 4px 12px rgba(59, 130, 246, 0.4)',
   },
   buttonDisabled: {
-    opacity: 0.5,
+    opacity: 0.6,
     cursor: 'not-allowed',
+    transform: 'none',
+    boxShadow: 'none',
   },
   error: {
     marginTop: '1rem',
-    padding: '0.75rem',
-    backgroundColor: 'rgba(239, 68, 68, 0.1)',
-    border: '1px solid #ef4444',
-    borderRadius: '0.25rem',
-    color: '#fca5a5',
-    fontSize: '0.875rem',
+    padding: '12px 16px',
+    backgroundColor: '#fef2f2',
+    border: '1px solid #fecaca',
+    borderRadius: '8px',
+    color: '#dc2626',
+    fontSize: '14px',
+    lineHeight: '1.5',
   },
   sampleSection: {
     marginTop: '2rem',
-    paddingTop: '1.5rem',
-    borderTop: '1px solid #4b5563',
+    paddingTop: '2rem',
+    borderTop: '1px solid #e5e7eb',
+  },
+  sampleTitle: {
+    fontSize: '16px',
+    fontWeight: '600',
+    marginBottom: '12px',
+    color: '#374151',
   },
   sampleCode: {
-    backgroundColor: '#111827',
-    padding: '0.75rem',
-    borderRadius: '0.25rem',
-    fontSize: '0.75rem',
-    fontFamily: 'monospace',
-    color: '#d1d5db',
-    marginBottom: '0.75rem',
+    backgroundColor: '#f9fafb',
+    border: '1px solid #e5e7eb',
+    padding: '16px',
+    borderRadius: '8px',
+    fontSize: '14px',
+    fontFamily: '"SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
+    color: '#374151',
+    marginBottom: '16px',
+    lineHeight: '1.6',
   },
   downloadButton: {
-    display: 'flex',
+    display: 'inline-flex',
     alignItems: 'center',
-    backgroundColor: '#374151',
+    backgroundColor: '#6b7280',
     color: 'white',
-    fontSize: '0.875rem',
-    padding: '0.5rem 1rem',
-    borderRadius: '0.25rem',
+    fontSize: '14px',
+    fontWeight: '500',
+    padding: '10px 16px',
+    borderRadius: '6px',
     border: 'none',
     cursor: 'pointer',
-    transition: 'background-color 0.2s',
+    transition: 'all 0.2s ease-in-out',
+    textDecoration: 'none',
   },
   downloadButtonHover: {
     backgroundColor: '#4b5563',
+    transform: 'translateY(-1px)',
   },
   resultsContainer: {
-    marginTop: '2rem',
-    backgroundColor: '#1f2937',
-    border: '1px solid #4b5563',
-    borderRadius: '0.5rem',
-    padding: '1.5rem',
+    marginTop: '3rem',
+    backgroundColor: 'white',
+    border: '1px solid #e5e7eb',
+    borderRadius: '12px',
+    padding: '2rem',
+    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
   },
   resultsHeader: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: '1rem',
+    marginBottom: '1.5rem',
+    flexWrap: 'wrap' as const,
+    gap: '1rem',
   },
   resultsTitle: {
-    fontSize: '1.25rem',
-    fontWeight: 'bold',
+    fontSize: '1.5rem',
+    fontWeight: '700',
+    color: '#1f2937',
+  },
+  tableContainer: {
+    overflowX: 'auto' as const,
+    borderRadius: '8px',
+    border: '1px solid #e5e7eb',
   },
   table: {
     width: '100%',
-    fontSize: '0.875rem',
+    fontSize: '14px',
+    borderCollapse: 'collapse' as const,
   },
   tableHeader: {
-    borderBottom: '1px solid #4b5563',
+    backgroundColor: '#f9fafb',
   },
   tableHeaderCell: {
     textAlign: 'left' as const,
-    padding: '0.5rem',
-    fontWeight: '500',
+    padding: '12px 16px',
+    fontWeight: '600',
+    color: '#374151',
+    borderBottom: '1px solid #e5e7eb',
+    fontSize: '14px',
+    textTransform: 'uppercase' as const,
+    letterSpacing: '0.05em',
   },
   tableRow: {
-    borderBottom: '1px solid #374151',
+    borderBottom: '1px solid #f3f4f6',
+    transition: 'background-color 0.15s ease-in-out',
+  },
+  tableRowHover: {
+    backgroundColor: '#f9fafb',
   },
   tableCell: {
-    padding: '0.5rem',
+    padding: '12px 16px',
+    color: '#1f2937',
+    fontSize: '14px',
+    verticalAlign: 'middle' as const,
   },
 }
 
@@ -280,86 +342,46 @@ export default function TopsisApp() {
     return true
   }
 
-  const calculateTopsis = () => {
+  const calculateTopsis = async () => {
     if (!validateInputs()) return
 
     setLoading(true)
     setError('')
 
     try {
-      const weightArray = weights.split(',').map(w => parseFloat(w.trim()))
-      const impactArray = impacts.split(',').map(i => i.trim())
+      // Convert data to CSV format for Python backend
+      const csvContent = Papa.unparse(data)
 
-      // Extract numeric data
-      const dataMatrix = data.slice(1).map(row => 
-        row.slice(1).map((val: string) => parseFloat(val))
-      )
-
-      // Normalize the matrix
-      const normalizedMatrix = dataMatrix.map((row: number[], i: number) => 
-        row.map((val: number, j: number) => {
-          const sumSquares = dataMatrix.reduce((sum: number, r: number[]) => sum + (r[j] ** 2), 0)
-          return val / Math.sqrt(sumSquares)
+      // Call Python backend
+      const response = await fetch('/api/topsis', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          csvData: csvContent,
+          weights: weights,
+          impacts: impacts,
+          email: email,
+          sendEmail: sendEmail
         })
-      )
+      })
 
-      // Apply weights
-      const weightedMatrix = normalizedMatrix.map((row: number[]) => 
-        row.map((val: number, j: number) => val * weightArray[j])
-      )
+      const result = await response.json()
 
-      // Find ideal best and worst
-      const idealBest: number[] = []
-      const idealWorst: number[] = []
-
-      for (let j = 0; j < weightArray.length; j++) {
-        const column = weightedMatrix.map((row: number[]) => row[j])
-        if (impactArray[j] === '+') {
-          idealBest.push(Math.max(...column))
-          idealWorst.push(Math.min(...column))
-        } else {
-          idealBest.push(Math.min(...column))
-          idealWorst.push(Math.max(...column))
-        }
+      if (!result.success) {
+        throw new Error(result.error || 'Failed to calculate TOPSIS')
       }
 
-      // Calculate distances and scores
-      const scores = weightedMatrix.map((row: number[]) => {
-        const distToBest = Math.sqrt(
-          row.reduce((sum: number, val: number, j: number) => sum + ((val - idealBest[j]) ** 2), 0)
-        )
-        const distToWorst = Math.sqrt(
-          row.reduce((sum: number, val: number, j: number) => sum + ((val - idealWorst[j]) ** 2), 0)
-        )
-        return distToWorst / (distToBest + distToWorst)
-      })
+      setResults(result.results)
 
-      // Create results with ranking
-      const resultsWithScores = data.slice(1).map((row, i) => {
-        const result: any = {}
-        data[0].forEach((header: string, j: number) => {
-          result[header] = row[j]
-        })
-        result['Topsis Score'] = (scores[i] * 100).toFixed(2)
-        return result
-      })
-
-      // Add ranks
-      const sortedResults = [...resultsWithScores].sort((a, b) => 
-        parseFloat(b['Topsis Score']) - parseFloat(a['Topsis Score'])
-      )
-
-      sortedResults.forEach((result, i) => {
-        result['Rank'] = i + 1
-      })
-
-      setResults(sortedResults)
-
-      // Handle email if requested
-      if (sendEmail && email) {
-        // In a real app, you'd send this to an API endpoint
-        console.log('Email would be sent to:', email)
-        alert('Results calculated! In a real implementation, results would be emailed.')
+      // Show email status message if email was requested
+      if (sendEmail && email && result.message) {
+        if (result.message.includes('✅')) {
+          alert(result.message)
+        } else if (result.message.includes('⚠️')) {
+          setError(result.message)
+        }
       }
 
     } catch (err) {
@@ -393,7 +415,7 @@ export default function TopsisApp() {
           {/* File Upload */}
           <div style={styles.inputGroup}>
             <label style={styles.label}>
-              UPLOAD CSV FILE *
+              Upload CSV File *
             </label>
             <input
               type="file"
@@ -409,7 +431,7 @@ export default function TopsisApp() {
           {/* Weights */}
           <div style={styles.inputGroup}>
             <label style={styles.label}>
-              WEIGHTS *
+              Weights *
             </label>
             <input
               type="text"
@@ -417,6 +439,8 @@ export default function TopsisApp() {
               onChange={(e) => setWeights(e.target.value)}
               placeholder="e.g., 1,1,1,2"
               style={styles.input}
+              onFocus={(e) => Object.assign(e.target.style, styles.inputFocus)}
+              onBlur={(e) => Object.assign(e.target.style, styles.input)}
             />
             <p style={styles.helpText}>
               Comma-separated numeric values (importance of each criterion)
@@ -426,7 +450,7 @@ export default function TopsisApp() {
           {/* Impacts */}
           <div style={styles.inputGroup}>
             <label style={styles.label}>
-              IMPACTS *
+              Impacts *
             </label>
             <input
               type="text"
@@ -434,6 +458,8 @@ export default function TopsisApp() {
               onChange={(e) => setImpacts(e.target.value)}
               placeholder="e.g., +,+,-,+"
               style={styles.input}
+              onFocus={(e) => Object.assign(e.target.style, styles.inputFocus)}
+              onBlur={(e) => Object.assign(e.target.style, styles.input)}
             />
             <p style={styles.helpText}>
               Comma-separated + or - (+ for maximize, - for minimize)
@@ -447,18 +473,25 @@ export default function TopsisApp() {
               checked={sendEmail}
               onChange={(e) => setSendEmail(e.target.checked)}
               style={styles.checkboxInput}
+              id="email-checkbox"
             />
-            <span style={styles.label}>SEND RESULTS TO EMAIL (OPTIONAL)</span>
+            <label htmlFor="email-checkbox" style={styles.checkboxLabel}>
+              Send results to email (optional)
+            </label>
           </div>
           
           {sendEmail && (
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your.email@example.com"
-              style={{...styles.input, marginBottom: '1.5rem'}}
-            />
+            <div style={styles.inputGroup}>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your.email@example.com"
+                style={styles.input}
+                onFocus={(e) => Object.assign(e.target.style, styles.inputFocus)}
+                onBlur={(e) => Object.assign(e.target.style, styles.input)}
+              />
+            </div>
           )}
 
           {/* Calculate Button */}
@@ -484,8 +517,8 @@ export default function TopsisApp() {
 
           {/* Sample CSV Section */}
           <div style={styles.sampleSection}>
-            <h3 style={{...styles.label, fontSize: '0.875rem', fontWeight: '500', marginBottom: '0.75rem'}}>
-              EXAMPLE CSV FORMAT:
+            <h3 style={styles.sampleTitle}>
+              Example CSV Format:
             </h3>
             <div style={styles.sampleCode}>
               <div>Model,Price,Storage,Camera,Battery</div>
@@ -497,11 +530,15 @@ export default function TopsisApp() {
             <button
               onClick={downloadSampleCSV}
               style={styles.downloadButton}
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = styles.downloadButtonHover.backgroundColor}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = styles.downloadButton.backgroundColor}
+              onMouseOver={(e) => {
+                Object.assign(e.currentTarget.style, styles.downloadButtonHover)
+              }}
+              onMouseOut={(e) => {
+                Object.assign(e.currentTarget.style, styles.downloadButton)
+              }}
             >
-              <span style={{marginRight: '0.5rem'}}>⬇️</span>
-              DOWNLOAD SAMPLE CSV FILE
+              <span style={{marginRight: '8px'}}>⬇️</span>
+              Download Sample CSV
             </button>
           </div>
         </div>
@@ -510,32 +547,48 @@ export default function TopsisApp() {
         {results.length > 0 && (
           <div style={styles.resultsContainer}>
             <div style={styles.resultsHeader}>
-              <h2 style={styles.resultsTitle}>▼ TOPSIS RESULTS</h2>
+              <h2 style={styles.resultsTitle}>TOPSIS Results</h2>
               <button
                 onClick={downloadResults}
                 style={styles.downloadButton}
-                onMouseOver={(e) => e.currentTarget.style.backgroundColor = styles.downloadButtonHover.backgroundColor}
-                onMouseOut={(e) => e.currentTarget.style.backgroundColor = styles.downloadButton.backgroundColor}
+                onMouseOver={(e) => {
+                  Object.assign(e.currentTarget.style, styles.downloadButtonHover)
+                }}
+                onMouseOut={(e) => {
+                  Object.assign(e.currentTarget.style, styles.downloadButton)
+                }}
               >
-                <span style={{marginRight: '0.5rem'}}>⬇️</span>
-                DOWNLOAD RESULTS AS CSV
+                <span style={{marginRight: '8px'}}>⬇️</span>
+                Download Results as CSV
               </button>
             </div>
 
-            <div style={{overflowX: 'auto'}}>
+            <div style={styles.tableContainer}>
               <table style={styles.table}>
                 <thead style={styles.tableHeader}>
                   <tr>
                     {Object.keys(results[0]).map((header) => (
                       <th key={header} style={styles.tableHeaderCell}>
-                        {header.toUpperCase()}
+                        {header}
                       </th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
                   {results.map((row, i) => (
-                    <tr key={i} style={styles.tableRow}>
+                    <tr 
+                      key={i} 
+                      style={styles.tableRow}
+                      onMouseOver={(e) => {
+                        Object.assign(e.currentTarget.style, {
+                          ...styles.tableRow,
+                          ...styles.tableRowHover
+                        })
+                      }}
+                      onMouseOut={(e) => {
+                        Object.assign(e.currentTarget.style, styles.tableRow)
+                      }}
+                    >
                       {Object.values(row).map((value, j) => (
                         <td key={j} style={styles.tableCell}>
                           {value as string}
