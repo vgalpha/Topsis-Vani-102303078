@@ -265,6 +265,35 @@ Thapar Institute of Engineering & Technology
 # Main application
 st.header("📤 Upload Your Data")
 
+# Sample data for download - make it prominently visible
+st.markdown("### 📥 Quick Start")
+col1, col2 = st.columns([1, 1])
+
+with col1:
+    example_data = {
+        'Fund Name': ['M1', 'M2', 'M3', 'M4', 'M5'],
+        'P1': [0.84, 0.91, 0.79, 0.78, 0.94],
+        'P2': [0.71, 0.83, 0.62, 0.61, 0.88],
+        'P3': [6.7, 7.0, 4.8, 6.4, 3.6],
+        'P4': [42.1, 31.7, 46.7, 42.4, 62.2]
+    }
+    example_df = pd.DataFrame(example_data)
+    sample_csv = example_df.to_csv(index=False)
+    
+    st.download_button(
+        label="📊 Download Sample CSV Data",
+        data=sample_csv,
+        file_name="sample_topsis_data.csv",
+        mime="text/csv",
+        help="Download sample data to test the TOPSIS application",
+        use_container_width=True
+    )
+
+with col2:
+    st.info("💡 **Try with sample data first!** Download the sample CSV and upload it to see how TOPSIS works.")
+
+st.markdown("---")
+
 col1, col2 = st.columns([2, 1])
 
 with col1:
@@ -443,30 +472,11 @@ else:
     st.info("👆 Please upload a CSV or Excel file to begin")
     
     with st.expander("📖 See Example Data Format"):
-        example_data = {
-            'Fund Name': ['M1', 'M2', 'M3', 'M4', 'M5'],
-            'P1': [0.84, 0.91, 0.79, 0.78, 0.94],
-            'P2': [0.71, 0.83, 0.62, 0.61, 0.88],
-            'P3': [6.7, 7.0, 4.8, 6.4, 3.6],
-            'P4': [42.1, 31.7, 46.7, 42.4, 62.2]
-        }
-        example_df = pd.DataFrame(example_data)
         st.dataframe(example_df, use_container_width=True)
         
         st.write("**For this data:**")
         st.write("- Weights: `1,1,1,1`")
         st.write("- Impacts: `+,+,-,+` (P1, P2, P4 higher is better; P3 lower is better)")
-        
-        # Download sample data button
-        sample_csv = example_df.to_csv(index=False)
-        st.download_button(
-            label="⬇️ Download Sample CSV",
-            data=sample_csv,
-            file_name="sample_topsis_data.csv",
-            mime="text/csv",
-            help="Download this sample data to test the application",
-            use_container_width=True
-        )
 
 # Footer
 st.markdown("---")
