@@ -1,4 +1,10 @@
-from http.server import BaseHTTPRequestHandler
+#!/usr/bin/env python3
+"""
+Local development server for TOPSIS calculations
+Run this to test the Python backend locally before deploying to Vercel
+"""
+
+from http.server import HTTPServer, BaseHTTPRequestHandler
 import json
 import pandas as pd
 import numpy as np
@@ -11,10 +17,26 @@ from email import encoders
 import io
 import os
 from datetime import datetime
+import urllib.parse
 from topsis import parse_weights_impacts
 
-class handler(BaseHTTPRequestHandler):
+class TopsisHandler(BaseHTTPRequestHandler):
+    def do_OPTIONS(self):
+        # Handle preflight requests
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.end_headers()
+    
     def do_POST(self):
+        if self.path == '/api/topsis':
+            self.handle_topsis_request()
+        else:
+            self.send_response(404)
+            self.end_headers()
+    
+    def handle_topsis_request(self):
         # Enable CORS
         self.send_response(200)
         self.send_header('Access-Control-Allow-Origin', '*')
@@ -94,14 +116,6 @@ class handler(BaseHTTPRequestHandler):
             
         except Exception as e:
             self.send_error_response(f"Server error: {str(e)}")
-    
-    def do_OPTIONS(self):
-        # Handle preflight requests
-        self.send_response(200)
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
-        self.end_headers()
     
     def send_error_response(self, message):
         response = {
@@ -242,3 +256,18 @@ Thapar Institute of Engineering & Technology
             
         except Exception as e:
             return f"⚠️ Could not send email: {str(e)}. Download results below."
+
+if __name__ == '__main__':
+    print("🐍 Starting local Python TOPSIS server...")
+    print("📍 Server will run on: http://localhost:8000")
+    print("🔗 Frontend should connect to: http://localhost:8000/api/topsis")
+    print("💡 Make sure your frontend is running on port 3000")
+    print("🛑 Press Ctrl+C to stop the server")
+    print("-" * 50)
+    
+    server = HTTPServer(('localhost', 8000), TopsisHandler)
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\n🛑 Server stopped")
+        server.server_close()

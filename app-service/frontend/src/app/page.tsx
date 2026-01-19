@@ -21,6 +21,59 @@ const styles = {
   maxWidth: {
     maxWidth: '1200px',
     margin: '0 auto',
+    display: 'grid' as const,
+    gridTemplateColumns: '1fr 300px',
+    gap: '2rem',
+  },
+  mainContent: {
+    minWidth: 0,
+  },
+  sidebar: {
+    backgroundColor: 'white',
+    border: '1px solid #e5e7eb',
+    borderRadius: '12px',
+    padding: '1.5rem',
+    height: 'fit-content',
+    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+    position: 'sticky' as const,
+    top: '2rem',
+  },
+  sidebarTitle: {
+    fontSize: '1.125rem',
+    fontWeight: '700',
+    color: '#1f2937',
+    marginBottom: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+  },
+  sidebarSection: {
+    marginBottom: '1.5rem',
+  },
+  sidebarSubtitle: {
+    fontSize: '14px',
+    fontWeight: '600',
+    color: '#374151',
+    marginBottom: '0.75rem',
+  },
+  sidebarText: {
+    fontSize: '14px',
+    color: '#6b7280',
+    lineHeight: '1.5',
+    marginBottom: '0.5rem',
+  },
+  sidebarLink: {
+    color: '#3b82f6',
+    textDecoration: 'underline',
+  },
+  howToList: {
+    paddingLeft: '1rem',
+    marginBottom: '1rem',
+  },
+  howToItem: {
+    fontSize: '14px',
+    color: '#6b7280',
+    marginBottom: '0.25rem',
   },
   title: {
     textAlign: 'center' as const,
@@ -352,8 +405,12 @@ export default function TopsisApp() {
       // Convert data to CSV format for Python backend
       const csvContent = Papa.unparse(data)
 
-      // Call Python backend
-      const response = await fetch('/api/topsis', {
+      // Call Python backend (local development server)
+      const apiUrl = process.env.NODE_ENV === 'development' 
+        ? 'http://localhost:8000/api/topsis'
+        : '/api/topsis'
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -402,15 +459,17 @@ export default function TopsisApp() {
 
   return (
     <div style={styles.container}>
-      <div style={styles.maxWidth}>
-        {/* Header */}
-        <div style={styles.title}>
-          <h1 style={styles.titleText}>TOPSIS WEB SERVICE</h1>
-          <p style={styles.subtitle}>MULTI-CRITERIA DECISION ANALYSIS TOOL</p>
-        </div>
+      {/* Header */}
+      <div style={styles.title}>
+        <h1 style={styles.titleText}>TOPSIS Web Service</h1>
+        <p style={styles.subtitle}>Multi-Criteria Decision Analysis Tool</p>
+      </div>
 
-        {/* Main Form Container */}
-        <div style={styles.formContainer}>
+      <div style={styles.maxWidth}>
+        {/* Main Content */}
+        <div style={styles.mainContent}>
+          {/* Main Form Container */}
+          <div style={styles.formContainer}>
           
           {/* File Upload */}
           <div style={styles.inputGroup}>
@@ -601,6 +660,116 @@ export default function TopsisApp() {
             </div>
           </div>
         )}
+        </div>
+
+        {/* Sidebar */}
+        <div style={styles.sidebar}>
+          <h2 style={styles.sidebarTitle}>
+            ℹ️ About
+          </h2>
+          
+          <div style={{
+            ...styles.sidebarSection,
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            color: 'white',
+            padding: '1.5rem',
+            borderRadius: '12px',
+            margin: '-0.5rem -0.5rem 1.5rem -0.5rem',
+            textAlign: 'center' as const,
+            boxShadow: '0 4px 15px 0 rgba(102, 126, 234, 0.4)',
+          }}>
+            <div style={{
+              fontSize: '1.25rem',
+              fontWeight: '700',
+              marginBottom: '1rem',
+              textShadow: '0 2px 4px rgba(0,0,0,0.1)',
+            }}>
+              🎓 Developer Information
+            </div>
+            <div style={{
+              backgroundColor: 'rgba(255,255,255,0.2)',
+              padding: '1rem',
+              borderRadius: '8px',
+              backdropFilter: 'blur(10px)',
+            }}>
+              <div style={{
+                fontSize: '1.125rem',
+                fontWeight: '600',
+                marginBottom: '0.5rem',
+                color: '#fff',
+              }}>
+                👨‍💻 Vani Goyal
+              </div>
+              <div style={{
+                fontSize: '1rem',
+                fontWeight: '500',
+                marginBottom: '0.5rem',
+                color: 'rgba(255,255,255,0.9)',
+              }}>
+                🆔 Roll No: 102303078
+              </div>
+              <div style={{
+                fontSize: '0.95rem',
+                fontWeight: '500',
+                color: 'rgba(255,255,255,0.9)',
+              }}>
+                📧 <a 
+                  href="mailto:vgoyal_be23@thapar.edu" 
+                  style={{
+                    color: '#fff',
+                    textDecoration: 'underline',
+                    fontWeight: '600',
+                  }}
+                >
+                  vgoyal_be23@thapar.edu
+                </a>
+              </div>
+            </div>
+            <div style={{
+              fontSize: '0.875rem',
+              marginTop: '0.75rem',
+              fontWeight: '500',
+              color: 'rgba(255,255,255,0.8)',
+            }}>
+              Thapar Institute of Engineering & Technology
+            </div>
+          </div>
+
+          <div style={styles.sidebarSection}>
+            <p style={styles.sidebarText}>
+              <strong>TOPSIS</strong> (Technique for Order Preference by Similarity to Ideal Solution)
+            </p>
+          </div>
+
+          <div style={styles.sidebarSection}>
+            <h3 style={styles.sidebarSubtitle}>How to use:</h3>
+            <ol style={styles.howToList}>
+              <li style={styles.howToItem}>Upload CSV/Excel file</li>
+              <li style={styles.howToItem}>Enter weights (comma-separated)</li>
+              <li style={styles.howToItem}>Enter impacts (+/- for each criterion)</li>
+              <li style={styles.howToItem}>Optionally provide your email</li>
+              <li style={styles.howToItem}>Click Calculate & Send</li>
+            </ol>
+          </div>
+
+          <div style={styles.sidebarSection}>
+            <h3 style={styles.sidebarSubtitle}>📝 Input Format</h3>
+            <p style={styles.sidebarText}>
+              <strong>File Structure:</strong><br/>
+              • Column 1: Alternative names<br/>
+              • Column 2-N: Numeric criteria values
+            </p>
+            <div style={{...styles.sidebarText, fontFamily: 'monospace', backgroundColor: '#f3f4f6', padding: '0.5rem', borderRadius: '4px', fontSize: '12px', marginTop: '0.5rem'}}>
+              <div>Fund,P1,P2,P3,P4</div>
+              <div>M1,0.84,0.71,6.7,42.1</div>
+              <div>M2,0.91,0.83,7.0,31.7</div>
+            </div>
+            <div style={{...styles.sidebarText, marginTop: '0.5rem'}}>
+              <strong>Weights:</strong> 1,1,1,2<br/>
+              <strong>Impacts:</strong> +,+,-,+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
