@@ -328,16 +328,26 @@ if uploaded_file is not None:
                 help=f"Enter {n_criteria} comma-separated '+' or '-' signs. '+' means higher is better, '-' means lower is better"
             )
         
-        email_input = st.text_input(
-            "📧 Email Address",
-            placeholder="your.email@example.com",
-            help="Enter your email to receive results"
+        # Email option
+        send_email_option = st.checkbox(
+            "📧 Send results via email",
+            value=False,
+            help="Check this if you want to receive results via email"
         )
+        
+        email_input = ""
+        if send_email_option:
+            email_input = st.text_input(
+                "📧 Email Address",
+                placeholder="your.email@example.com",
+                help="Enter your email to receive results"
+            )
         
         st.markdown("---")
         
         # Calculate button
-        if st.button("🚀 Calculate TOPSIS & Send Results", use_container_width=True):
+        button_text = "🚀 Calculate TOPSIS" + (" & Send Results" if send_email_option else "")
+        if st.button(button_text, use_container_width=True):
             errors = []
             
             # Validate inputs
@@ -345,10 +355,11 @@ if uploaded_file is not None:
                 errors.append("Please enter weights")
             if not impacts_input:
                 errors.append("Please enter impacts")
-            if not email_input:
-                errors.append("Please enter email address")
-            elif not validate_email(email_input):
-                errors.append("Please enter a valid email address")
+            if send_email_option:
+                if not email_input:
+                    errors.append("Please enter email address")
+                elif not validate_email(email_input):
+                    errors.append("Please enter a valid email address")
             
             if errors:
                 for error in errors:
@@ -394,14 +405,21 @@ if uploaded_file is not None:
                                 hide_index=True
                             )
                         
-                        # Send email
-                        with st.spinner("📧 Sending email..."):
-                            csv_content, message = send_email(email_input, result_df)
-                        
-                        if "successfully" in message.lower():
-                            st.success(message)
+                        # Send email if requested
+                        csv_content = None
+                        if send_email_option:
+                            with st.spinner("📧 Sending email..."):
+                                csv_content, message = send_email(email_input, result_df)
+                            
+                            if "successfully" in message.lower():
+                                st.success(message)
+                            else:
+                                st.warning(message)
                         else:
-                            st.warning(message)
+                            # Generate CSV content for download
+                            csv_buffer = io.StringIO()
+                            result_df.to_csv(csv_buffer, index=False)
+                            csv_content = csv_buffer.getvalue()
                         
                         # Download button
                         if csv_content:
@@ -432,11 +450,23 @@ else:
             'P3': [6.7, 7.0, 4.8, 6.4, 3.6],
             'P4': [42.1, 31.7, 46.7, 42.4, 62.2]
         }
-        st.dataframe(pd.DataFrame(example_data), use_container_width=True)
+        example_df = pd.DataFrame(example_data)
+        st.dataframe(example_df, use_container_width=True)
         
         st.write("**For this data:**")
         st.write("- Weights: `1,1,1,1`")
         st.write("- Impacts: `+,+,-,+` (P1, P2, P4 higher is better; P3 lower is better)")
+        
+        # Download sample data button
+        sample_csv = example_df.to_csv(index=False)
+        st.download_button(
+            label="⬇️ Download Sample CSV",
+            data=sample_csv,
+            file_name="sample_topsis_data.csv",
+            mime="text/csv",
+            help="Download this sample data to test the application",
+            use_container_width=True
+        )
 
 # Footer
 st.markdown("---")
