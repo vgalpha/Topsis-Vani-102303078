@@ -163,8 +163,6 @@ Sample data with 8 mutual funds (M1-M8) evaluated on 5 criteria:
 ## 🔗 Links
 
 - **Web App:** [https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/](https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/)
-<br>
-
 ## 🚨 **IMPORTANT WARNING** 🚨
 
 > ### ⚠️ **<span style="color: red; font-weight: bold; font-size: 1.2em;">APP MAY BE INACTIVE - CLICK TO REACTIVATE</span>** ⚠️
