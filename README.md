@@ -14,6 +14,7 @@
 
 ## 🔗 Quick Links
 - **🌐 Web App:** [https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/](https://topsis-vani-102303078-devxqkkn7acxr5gvy9krww.streamlit.app/)
+- **📦 PyPI Package:** [https://pypi.org/project/Topsis-Vani-102303078/](https://pypi.org/project/Topsis-Vani-102303078/)
 ## 🚨 **IMPORTANT WARNING** 🚨
 
 > ### ⚠️ **<span style="color: red; font-weight: bold; font-size: 1.2em;">APP MAY BE INACTIVE - CLICK TO REACTIVATE</span>** ⚠️
@@ -25,7 +26,6 @@
 > ![App Inactive](static/app-state.png)
 
 - **📓 Google Colab:** [https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing](https://colab.research.google.com/drive/1ST6ZFCftDDuqpOB5V8KlceaAQF5sS6xq?usp=sharing)
-- **📦 PyPI Package:** [https://pypi.org/project/Topsis-Vani-102303078/](https://pypi.org/project/Topsis-Vani-102303078/)
 - **💻 GitHub Repository:** [https://github.com/vgalpha/Topsis-Vani-102303078](https://github.com/vgalpha/Topsis-Vani-102303078)
 
 ---
