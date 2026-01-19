@@ -424,6 +424,13 @@ export default function TopsisApp() {
         })
       })
 
+      if (!response.ok) {
+        if (response.status === 0 || !response.status) {
+          throw new Error('Backend server is not running. Please start the Python server on port 8000.')
+        }
+        throw new Error(`Server error: ${response.status} ${response.statusText}`)
+      }
+
       const result = await response.json()
 
       if (!result.success) {
@@ -442,7 +449,12 @@ export default function TopsisApp() {
       }
 
     } catch (err) {
-      setError('Error calculating TOPSIS: ' + (err as Error).message)
+      const error = err as Error
+      if (error.message.includes('fetch')) {
+        setError('Cannot connect to backend server. Please ensure the Python server is running on port 8000.')
+      } else {
+        setError('Error calculating TOPSIS: ' + error.message)
+      }
     } finally {
       setLoading(false)
     }
